@@ -1,0 +1,39 @@
+<template-instance>
+	<template-type>alvex/manager-dashboard-tasks/managees-view</template-type>
+
+	<components>
+		<!-- All Filter -->
+		<component>
+			<region-id>all-filter</region-id>
+			<url>/components/workflow/filter/all</url>
+			<properties>
+				<mode>tasks</mode>
+			</properties>
+		</component>
+
+		<!-- Due Filter -->
+		<component>
+			<region-id>due-filter</region-id>
+			<url>/components/workflow/filter/due</url>
+		</component>
+
+		<!-- Priority Filter -->
+		<component>
+			<region-id>priority-filter</region-id>
+			<url>/components/workflow/filter/priority</url>
+		</component>
+
+		<component>
+			<region-id>title</region-id>
+			<url>/components/title/simple-title</url>
+			<properties>
+				<title>alvex.manager-dashboard-tasks.pageTitle.managees-tasks</title>
+			</properties>
+		</component>
+		<component>
+			<region-id>tasks-view</region-id>
+			<url>/components/alvex/manager-dashboard-tasks/managees-view</url>
+		</component>
+	</components>
+
+</template-instance>

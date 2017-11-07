@@ -1,5 +1,22 @@
 <extension>
   <modules>
-
+    <module>
+      <id>manager-dashboard-tasks-share-header</id>
+      <version>1.0</version>
+      <auto-deploy>true</auto-deploy>
+      <customizations>
+        <customization>
+          <targetPackageRoot>org.alfresco.share.header</targetPackageRoot>
+          <sourcePackageRoot>com.alvexcore.manager-dashboard-tasks-header</sourcePackageRoot>
+        </customization>
+        <customization>
+          <targetPackageRoot>org.alfresco.share.pages</targetPackageRoot>
+          <sourcePackageRoot>com.alvexcore.manager-dashboard-tasks-header</sourcePackageRoot>
+          <alwaysApply>
+            <webscript>share-header</webscript>
+          </alwaysApply>
+        </customization>
+      </customizations>
+    </module>
   </modules>
 </extension>

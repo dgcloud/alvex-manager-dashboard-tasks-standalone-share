@@ -19,6 +19,8 @@
       <property name="resourceBundles">
          <list>
             <value>alfresco.web-extension.messages.alvex-manager-dashboard-tasks-standalone-share</value>
+            <value>alfresco.module.${project.artifactId}.messages.alvex-managees-workflows</value>
+            <value>alfresco.module.${project.artifactId}.messages.alvex-manager-dashboard-tasks</value>
          </list>
       </property>
    </bean>
