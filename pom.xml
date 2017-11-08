@@ -5,8 +5,8 @@
     <groupId>br.com.dgcloud</groupId>
     <artifactId>alvex-manager-dashboard-tasks-standalone-share</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>alvex-manager-dashboard-tasks-standalone-share Share Jar Module - SDK 3</name>
-    <description>Share JAR Module (to be included in the share.war) - SDK 3</description>
+    <name>alvex-manager-dashboard-tasks-standalone-share Share Module</name>
+    <description>Share Module (to be included in the share.war)</description>
     <packaging>jar</packaging>
 
     <properties>
@@ -91,6 +91,7 @@
                             <groupId>${project.groupId}</groupId>
                             <artifactId>${project.artifactId}</artifactId>
                             <version>${project.version}</version>
+                            <type>amp</type>
                         </moduleDependency>
                     </shareModules>
                 </configuration>
@@ -193,6 +194,54 @@
                         <nonFilteredFileExtension>js</nonFilteredFileExtension>
                     </nonFilteredFileExtensions>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>yuicompressor-maven-plugin</artifactId>
+                <version>1.5.1</version>
+                <executions>
+                    <execution>
+                        <id>compress-assembly</id>
+                        <goals>
+                            <goal>compress</goal>
+                        </goals>
+                        <configuration>
+                            <!-- select only the directory you want to compress -->
+                            <sourceDirectory>${project.basedir}/src/main/assembly/web</sourceDirectory>
+                            <!-- and send it to the right output directory -->
+                            <outputDirectory>${project.basedir}/src/main/assembly/web</outputDirectory>
+
+                            <excludes>
+                                <exclude>**/site-webscripts/**</exclude>
+                                <exclude>**/META-INF/**</exclude>
+                                <exclude>**/*-min.js</exclude>
+                            </excludes>
+
+                            <force>true</force>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>compress-resources</id>
+                        <goals>
+                            <goal>compress</goal>
+                        </goals>
+                        <configuration>
+                            <!-- select only the directory you want to compress -->
+                            <sourceDirectory>${project.basedir}/src/main/resources</sourceDirectory>
+                            <!-- and send it to the right output directory -->
+                            <outputDirectory>${project.basedir}/src/main/resources</outputDirectory>
+
+                            <excludes>
+                                <exclude>**/site-webscripts/**</exclude>
+                                <exclude>**/*-min.js</exclude>
+                            </excludes>
+
+                            <force>true</force>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
 
