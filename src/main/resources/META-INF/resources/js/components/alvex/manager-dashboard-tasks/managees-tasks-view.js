@@ -81,8 +81,7 @@ if (typeof Alvex == "undefined" || !Alvex) {
                                         + '<div class="yui-u first"><h2 id="' + this.id + '-title-' + m
                                         + '" class="thin"><a href="' + Alfresco.constants.URL_PAGECONTEXT
                                         + 'user/' + this.options.managees[m].userName + '/profile">'
-                                        + this.options.managees[m].name + '</a></h2></div><div class="yui-u"><div id="'
-                                        + this.id + '-paginator-' + m + '" class="paginator">&nbsp;</div></div></div>'
+                                        + this.options.managees[m].name + '</a></h2></div></div></div>'
                                         + '<div id="' + this.id + '-tasks-' + m + '" class="tasks" style="margin: 0">'
                                         + '</div></div>';
                                     YAHOO.util.Event.onContentReady(this.id + '-user-' + m,
