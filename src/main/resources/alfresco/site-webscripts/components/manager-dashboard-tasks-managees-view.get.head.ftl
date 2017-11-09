@@ -1,4 +1,4 @@
-<#include "/form.get.head.ftl">
+<#include "/org/alfresco/components/component.head.inc">
 
 <@script type="text/javascript" src="${page.url.context}/res/components/workflow/workflow-actions.js" />
 <@script type="text/javascript" src="${page.url.context}/res/js/components/alvex/manager-dashboard-tasks/managees-tasks-view.js" />
