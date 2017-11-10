@@ -21,6 +21,7 @@
             <value>alfresco.web-extension.messages.alvex-manager-dashboard-tasks-standalone-share</value>
             <value>alfresco.module.${project.artifactId}.messages.alvex-managees-workflows</value>
             <value>alfresco.module.${project.artifactId}.messages.alvex-manager-dashboard-tasks</value>
+            <value>alfresco.module.${project.artifactId}.messages.alvex-orgchart</value>
          </list>
       </property>
    </bean>

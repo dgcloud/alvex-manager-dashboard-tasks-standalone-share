@@ -1,19 +1,198 @@
-<!-- Share configuration related to this particular Share module extension, such as:
-     - Doclib action config
-     - Form config
-     - Aspect and Type config
-     - Advanced Search
-
-    Note. Any configuration related to the whole Share.war webapp
-           (i.e. not specific to this share extension) should be
-            placed in the environment specific config file:
-             alfresco/tomcat/shared/classes/alfresco/web-extension/share-config-custom.xml
-     -->
 <alfresco-config>
-    <!--================================================================================================================
-            Make custom types and aspects visible in "Change Type" and "Manage Aspects" actions.
-             This will also make them visible when creating rules.
-            (will be merged with out-of-the-box configured types and aspects)
-        =============================================================================================================-->
+    <!-- Forms resources for orgchart controls -->
+    <config>
+        <forms>      
+            <dependencies>
+                <css src="/yui/datatable/assets/skins/sam/datatable.css" />
+                <css src="/components/profile/profile.css" />
+                <css src="/css/components/alvex/orgchart/orgchart-view.css" />
+                <css src="/css/grouped-data-table/grouped-data-table.css" />
+                <css src="/yui/assets/skins/sam/treeview.css" />
+                <js  src="/yui/yahoo-dom-event/yahoo-dom-event.js" />
+                <js  src="/yui/element/element.js" />
+                <js  src="/yui/uploader/uploader.js" />
+                <js  src="/yui/datasource/datasource.js" />
+                <js  src="/yui/datatable/datatable.js" />
+                <js  src="/yui/cookie/cookie.js" />
+                <js  src="/js/jit/jit-yc.js" />
+                <js  src="/yui/resize/resize.js" />
+                <js  src="/yui/treeview/treeview.js" />
+                <js  src="/yui/animation/animation.js" />
+                <js  src="/yui/dragdrop/dragdrop.js" />
+                <js  src="/js/components/alvex/orgchart/orgchart-view.js" />
+                <js  src="/js/components/alvex/orgchart/orgchart-group-view.js" />
+                <js  src="/js/grouped-data-table/grouped-data-table.js" />
+                <js  src="/js/components/alvex/alvex.js" />
+            </dependencies>
+        </forms>
+    </config>
+
+    <!-- Orgchart UI config forms -->
+    <config evaluator="model-type" condition="alvexoc:UIConfig">
+        <forms>
+            <!-- Create Form -->
+            <form>
+                <field-visibility>
+                    <show id="alvexoc:viewType" />
+                    <show id="alvexoc:showUnitsRecursively" />
+                    <show id="alvexoc:superviseUnitsRecursively" />
+                    <show id="alvexoc:defaultRoleName" />
+                </field-visibility>
+                <create-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+                <appearance>
+                    <set id="config" appearance="" label="" />
+                    <field set="config" id="alvexoc:viewType" />
+                    <field set="config" id="alvexoc:showUnitsRecursively" />
+                    <field set="config" id="alvexoc:superviseUnitsRecursively" />
+                    <field set="config" id="alvexoc:defaultRoleName" />
+                </appearance>
+            </form>
+        </forms>
+    </config>
+
+    <config evaluator="node-type" condition="alvexoc:UIConfig">
+        <forms>
+            <!-- View / Edit Form -->
+            <form>
+                <field-visibility>
+                    <show id="alvexoc:viewType" />
+                    <show id="alvexoc:showUnitsRecursively" />
+                    <show id="alvexoc:superviseUnitsRecursively" />
+                    <show id="alvexoc:defaultRoleName" />
+                </field-visibility>
+                <view-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+                <edit-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+                <appearance>
+                    <set id="config" appearance="" label="" />
+                    <field set="config" id="alvexoc:viewType" />
+                    <field set="config" id="alvexoc:showUnitsRecursively" />
+                    <field set="config" id="alvexoc:superviseUnitsRecursively" />
+                    <field set="config" id="alvexoc:defaultRoleName" />
+                </appearance>
+            </form>
+        </forms>
+    </config>
+
+    <!-- Orgchart sync config forms -->
+    <config evaluator="model-type" condition="alvexoc:syncConfig">
+        <forms>
+            <!-- Create Form -->
+            <form>
+                <field-visibility>
+                    <show id="alvexoc:syncSource" />
+                    <show id="alvexoc:syncRootGroupName" />
+                </field-visibility>
+                <create-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+                <appearance>
+                    <set id="config" appearance="" label="" />
+                    <field set="config" id="alvexoc:syncSource" />
+                    <field set="config" id="alvexoc:syncRootGroupName" />
+                </appearance>
+            </form>
+        </forms>
+    </config>
+
+    <config evaluator="node-type" condition="alvexoc:syncConfig">
+        <forms>
+            <!-- View / Edit Form -->
+            <form>
+                <field-visibility>
+                    <show id="alvexoc:syncSource" />
+                    <show id="alvexoc:syncRootGroupName" />
+                </field-visibility>
+                <view-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+                <edit-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+                <appearance>
+                    <set id="config" appearance="" label="" />
+                    <field set="config" id="alvexoc:syncSource" />
+                    <field set="config" id="alvexoc:syncRootGroupName" />
+                </appearance>
+            </form>
+        </forms>
+    </config>
+
+    <!-- Orgchart unit add / modify forms -->
+    <config evaluator="model-type" condition="alvexoc:unit">
+        <forms>
+            <!-- Create Form -->
+            <form>
+                <field-visibility>
+                    <show id="alvexoc:unitDisplayName" />
+                    <show id="alvexoc:unitWeight" />
+                    <show id="alvexoc:admin" />
+                    <show id="alvexoc:supervisor" />
+                </field-visibility>
+                <create-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+                <appearance>
+                    <set id="config" appearance="" label="" />
+                    <field set="config" id="alvexoc:unitDisplayName" />
+                    <field set="config" id="alvexoc:unitWeight" help-id="alvex.orgchart.what_is_weight"/>
+                    <field set="config" id="alvexoc:admin" />
+                    <field set="config" id="alvexoc:supervisor" />
+                </appearance>
+            </form>
+        </forms>
+    </config>
+
+    <config evaluator="node-type" condition="alvexoc:unit">
+        <forms>
+            <!-- View / Edit Form -->
+            <form>
+                <field-visibility>
+                    <show id="alvexoc:unitDisplayName" />
+                    <show id="alvexoc:unitWeight" />
+                    <show id="alvexoc:admin" />
+                    <show id="alvexoc:supervisor" />
+                </field-visibility>
+                <view-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+                <edit-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+                <appearance>
+                    <set id="config" appearance="" label="" />
+                    <field set="config" id="alvexoc:unitDisplayName" />
+                    <field set="config" id="alvexoc:unitWeight" help-id="alvex.orgchart.what_is_weight"/>
+                    <field set="config" id="alvexoc:admin" />
+                    <field set="config" id="alvexoc:supervisor" />
+                </appearance>
+            </form>
+        </forms>
+    </config>
+
+    <!-- Orgchart role definition add / modify forms -->
+    <config evaluator="model-type" condition="alvexoc:roleDefinition">
+        <forms>
+            <!-- Create Form -->
+            <form>
+                <field-visibility>
+                    <show id="alvexoc:roleDisplayName" />
+                    <show id="alvexoc:roleWeight" />
+                </field-visibility>
+                <create-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+                <appearance>
+                    <set id="config" appearance="" label="" />
+                    <field set="config" id="alvexoc:roleDisplayName" />
+                    <field set="config" id="alvexoc:roleWeight" help-id="alvex.orgchart.what_is_weight"/>
+                </appearance>
+            </form>
+        </forms>
+    </config>
+
+    <config evaluator="node-type" condition="alvexoc:roleDefinition">
+        <forms>
+            <!-- View / Edit Form -->
+            <form>
+                <field-visibility>
+                    <show id="alvexoc:roleDisplayName" />
+                    <show id="alvexoc:roleWeight" />
+                </field-visibility>
+                <view-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+                <edit-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+                <appearance>
+                    <set id="config" appearance="" label="" />
+                    <field set="config" id="alvexoc:roleDisplayName" />
+                    <field set="config" id="alvexoc:roleWeight" help-id="alvex.orgchart.what_is_weight"/>
+                </appearance>
+            </form>
+        </forms>
+    </config>
 
 </alfresco-config>
