@@ -216,6 +216,7 @@
                                 <exclude>**/site-webscripts/**</exclude>
                                 <exclude>**/META-INF/**</exclude>
                                 <exclude>**/*-min.js</exclude>
+                                <exclude>**/*-min.css</exclude>
                             </excludes>
 
                             <force>true</force>
@@ -236,6 +237,7 @@
                             <excludes>
                                 <exclude>**/site-webscripts/**</exclude>
                                 <exclude>**/*-min.js</exclude>
+                                <exclude>**/*-min.css</exclude>
                             </excludes>
 
                             <force>true</force>
