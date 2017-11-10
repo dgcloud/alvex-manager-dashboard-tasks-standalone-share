@@ -1,4 +1,5 @@
 /target/
 *.log
 *-min.js
+*-min.css
 *.iml
