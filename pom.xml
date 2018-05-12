@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>br.com.dgcloud</groupId>
     <artifactId>alvex-manager-dashboard-tasks-standalone-share</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <name>alvex-manager-dashboard-tasks-standalone-share Share Module</name>
     <description>Share Module (to be included in the share.war)</description>
     <packaging>jar</packaging>
@@ -21,13 +21,13 @@
         <!-- Alfresco Share webapp version, this is the original Alfresco webapp that will be
             customized and then deployed and run by the tomcat maven plugin when
             executing for example $ mvn clean install alfresco:run -->
-        <alfresco.share.version>5.0.d</alfresco.share.version>
+        <alfresco.share.version>5.2.f</alfresco.share.version>
 
         <!-- Default is to run with a Community edition, change to 'enterprise' if using Enterprise edition -->
         <maven.alfresco.edition>community</maven.alfresco.edition>
 
         <!-- Alfresco Surf version, if you change Share version you might need to change Surf version -->
-        <alfresco.surf.version>5.0.d</alfresco.surf.version>
+        <alfresco.surf.version>6.11</alfresco.surf.version>
 
         <!-- Since alfresco.war (i.e. the Platform/Repository) is already running on port 8080, we run Share.WAR on port 8081.
             If Alfresco Platform is not running, then generate a platform-jar-module and start it up. -->
