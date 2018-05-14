@@ -52,12 +52,18 @@
         </dependency>
 
         <dependency>
-            <!--<groupId>org.alfresco.surf</groupId>-->
-            <groupId>org.springframework.extensions.surf</groupId>
+            <groupId>org.alfresco.surf</groupId>
             <artifactId>spring-surf-api</artifactId>
             <version>${alfresco.surf.version}</version>
             <scope>provided</scope>
         </dependency>
+        
+        <dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <version>3.0.1</version>
+		    <scope>provided</scope>
+		</dependency>
     </dependencies>
 
     <build>
