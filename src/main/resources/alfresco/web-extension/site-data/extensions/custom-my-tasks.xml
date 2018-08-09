@@ -1,0 +1,15 @@
+<extension>
+    <modules>
+        <module>
+            <id>My tasks with workflow type filter</id>
+            <description>My tasks with workflow type filter</description>
+            <auto-deploy>true</auto-deploy>
+            <customizations>
+                <customization>
+                    <targetPackageRoot>org.alfresco</targetPackageRoot>
+                    <sourcePackageRoot>br.com.dgcloud.custommytasks</sourcePackageRoot>
+                </customization>
+            </customizations>
+        </module>
+    </modules>
+</extension>

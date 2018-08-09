@@ -3,3 +3,6 @@
 *-min.js
 *-min.css
 *.iml
+/.settings/
+*.project
+*.classpath

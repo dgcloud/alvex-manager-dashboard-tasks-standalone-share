@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<component>
+    <scope>template</scope>
+    <region-id>workflow-type-filter</region-id>
+    <source-id>my-tasks</source-id>
+    <url>/components/workflow/filter/workflow-type</url>
+</component>
