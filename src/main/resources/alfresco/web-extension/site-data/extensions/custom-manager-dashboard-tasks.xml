@@ -1,0 +1,15 @@
+<extension>
+    <modules>
+        <module>
+            <id>Tasks of My Team with workflow type filter</id>
+            <description>Tasks of My Team with workflow type filter</description>
+            <auto-deploy>true</auto-deploy>
+            <customizations>
+                <customization>
+                    <targetPackageRoot>alvex.manager-dashboard-tasks</targetPackageRoot>
+                    <sourcePackageRoot>br.com.dgcloud.custom-manager-dashboard-tasks</sourcePackageRoot>
+                </customization>
+            </customizations>
+        </module>
+    </modules>
+</extension>

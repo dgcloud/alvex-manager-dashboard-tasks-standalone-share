@@ -22,6 +22,8 @@
       <filter id="due"           data="overdue"      parameters="dueBefore={-1d}"/>
       <filter id="due"           data="noDate"       parameters="dueBefore="/>
       <filter id="priority"      data="*"            parameters="priority={data}"/>
-            <filter id="workflowType"  data="*"            parameters="definitionName={data}"/>
+      <filter id="assignee"      data="me"           parameters="pooledTasks=false"/>
+      <filter id="assignee"      data="unassigned"   parameters="pooledTasks=true" />
+      <filter id="workflowType"  data="*"            parameters="definitionName={data}"/>
    </filters-parameters>
 </config>
