@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>br.com.dgcloud</groupId>
     <artifactId>alvex-manager-dashboard-tasks-standalone-share</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.1</version>
     <name>alvex-manager-dashboard-tasks-standalone-share Share Module</name>
     <description>Share Module (to be included in the share.war)</description>
     <packaging>jar</packaging>
